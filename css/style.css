@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg: #21252f;
-  --card-bg: #2d313c;
-  --text: #e8e8e8;
+  --bg1: #1a1b26;
+  --bg2: #232538;
+  --bg3: #1f2233;
 
-  --cherry: #daecf1;
-  --apple: #8eaf55;
-  --moss: #2d4729;
-  --gunmetal: #4e5053;
+  --text: #e9e6f0;
+
+  --pink: #ff7aa2;
+  --lilac: #b59cff;
+  --blue: #7cc7ff;
+
+  --glass: rgba(255,255,255,0.06);
 }
 
 * {
@@ -18,11 +21,21 @@
 }
 
 body {
-  background: var(--bg);
   font-family: 'Poppins', sans-serif;
   color: var(--text);
   min-height: 100vh;
   padding: 40px;
+
+  /* 🔥 fondo con vida */
+  background: linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg3));
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* HEADER */
@@ -36,18 +49,21 @@ header {
 .logo {
   position: sticky;
   top: 20px;
-  border: 3px solid var(--gunmetal);
   padding: 18px 35px;
-  border-radius: 20px;
-  background-color: var(--card-bg);
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, rgba(255,122,162,0.2), rgba(181,156,255,0.2));
+  border: 1px solid rgba(255,255,255,0.15);
+
   font-family: 'Caveat', cursive;
   font-size: 2.2rem;
-  box-shadow: 6px 6px 0px rgba(0,0,0,0.4);
+
+  backdrop-filter: blur(10px);
 }
 
 .career {
   letter-spacing: 2px;
-  border-bottom: 3px solid var(--gunmetal);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
   padding-bottom: 10px;
   width: 50%;
   text-align: center;
@@ -55,32 +71,45 @@ header {
 
 /* SECTIONS */
 section {
-  background-color: var(--card-bg);
-  border: 3px solid var(--gunmetal);
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 30px;
   padding: 30px;
   margin-bottom: 35px;
-  box-shadow: 8px 8px 0px rgba(0,0,0,0.4);
+
+  backdrop-filter: blur(12px);
+
   transition: 0.3s ease;
 }
 
 section:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  border-color: var(--lilac);
+  box-shadow: 0 0 25px rgba(181,156,255,0.2);
+}
+
+/* TITULOS */
+h2 {
+  color: var(--pink);
+  margin-bottom: 15px;
 }
 
 /* CARDS */
 .card {
-  background-color: var(--bg);
-  border: 2px solid var(--gunmetal);
+  background: linear-gradient(135deg, rgba(255,122,162,0.08), rgba(124,199,255,0.08));
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 25px;
   padding: 20px;
   margin-bottom: 25px;
   line-height: 1.7;
+
   transition: 0.3s ease;
 }
 
 .card:hover {
-  border-color: var(--apple);
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(124,199,255,0.2);
+  border-color: var(--blue);
 }
 
 /* BOTÓN JUGAR */
@@ -89,21 +118,31 @@ section:hover {
   margin-top: 10px;
   padding: 10px 15px;
   border-radius: 12px;
-  background-color: var(--apple);
-  color: #1a1a1a;
+
+  background: linear-gradient(90deg, var(--pink), var(--lilac));
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.btn-play:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
 }
 
 /* TAG */
 .dev-tag {
   display: inline-block;
   margin-top: 10px;
-  background-color: var(--cherry);
-  color: #1a1a1a;
   padding: 6px 12px;
   border-radius: 10px;
+
+  background: linear-gradient(90deg, var(--blue), var(--lilac));
+  color: #1a1b26;
   font-size: 0.8rem;
+  font-weight: 600;
 }
 
 /* SKILLS */
@@ -111,24 +150,27 @@ section:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  justify-content: center;
 }
 
 .skill {
-  background-color: var(--card-bg);
-  border: 1px solid var(--gunmetal);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
   padding: 12px;
   border-radius: 18px;
   min-width: 100px;
-  max-width: 110px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+
+  transition: 0.3s ease;
 }
 
-.skill img {
-  width: 35px;
-  height: 35px;
+.skill:hover {
+  transform: scale(1.07);
+  border-color: var(--pink);
 }
 
 /* REDES */
@@ -140,15 +182,26 @@ section:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  z-index: 1000;
 }
 
 .socials a {
-  text-decoration: none;
-  background-color: var(--card-bg);
-  border: 2px solid var(--gunmetal);
   padding: 10px 15px;
   border-radius: 15px;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+
   color: var(--text);
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateX(6px);
+  border-color: var(--pink);
+  color: var(--pink);
 }
 
 /* GATITO */
@@ -157,8 +210,16 @@ section:hover {
   bottom: 20px;
   right: 20px;
   width: 110px;
+
+  z-index: 9999; /* 🔥 esto lo saca de atrás */
+
+  filter: drop-shadow(0 0 12px rgba(181,156,255,0.4));
+  transition: 0.3s ease;
 }
 
+.cat:hover {
+  transform: scale(1.05) rotate(2deg);
+}
 /* FOOTER */
 footer {
   text-align: center;
