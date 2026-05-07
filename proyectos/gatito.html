@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gatito mágico</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: radial-gradient(circle, #1a1a2e, #0f0f1a);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 10px;
+  text-shadow: 0 0 10px #7c4dff;
+}
+
+#game {
+  width: 500px;
+  height: 500px;
+  margin: 20px auto;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid #7c4dff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 25px #7c4dff;
+}
+
+#cat {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  font-size: 40px;
+  transition: transform 0.1s;
+}
+
+.croqueta {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  font-size: 25px;
+  animation: float 1.5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #7c4dff;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fade 0.8s forwards;
+}
+
+@keyframes fade {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2) translateY(-20px); }
+}
+
+#info {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #7c4dff;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🐱 Gatito mágico</h1>
+
+<div id="info">
+Tiempo: <span id="time">30</span> | 
+Croquetas: <span id="score">0</span> | 
+Récord: <span id="best">0</span>
+</div>
+
+<button onclick="startGame()">Activar magia ✨</button>
+
+<div id="game">
+  <div id="cat">🐱</div>
+</div>
+
+<script>
+let cat = document.getElementById("cat");
+let game = document.getElementById("game");
+let scoreText = document.getElementById("score");
+let timeText = document.getElementById("time");
+let bestText = document.getElementById("best");
+
+let x = 200;
+let y = 200;
+let score = 0;
+let time = 30;
+let gameInterval;
+let croquetas = [];
+
+// 🟢 RECORD (LOCAL STORAGE)
+let best = localStorage.getItem("bestScore") || 0;
+bestText.textContent = best;
+
+document.addEventListener("keydown", moveCat);
+
+function moveCat(e) {
+  if (time <= 0) return;
+
+  if (e.key === "ArrowUp") y -= 10;
+  if (e.key === "ArrowDown") y += 10;
+  if (e.key === "ArrowLeft") x -= 10;
+  if (e.key === "ArrowRight") x += 10;
+
+  if (x < 0) x = 0;
+  if (y < 0) y = 0;
+  if (x > 450) x = 450;
+  if (y > 450) y = 450;
+
+  cat.style.left = x + "px";
+  cat.style.top = y + "px";
+
+  cat.style.transform = "scale(1.1)";
+  setTimeout(() => cat.style.transform = "scale(1)", 100);
+
+  checkCollision();
+}
+
+function startGame() {
+  score = 0;
+  time = 30;
+
+  scoreText.textContent = score;
+  timeText.textContent = time;
+
+  x = 200;
+  y = 200;
+  cat.style.left = x + "px";
+  cat.style.top = y + "px";
+
+  clearInterval(gameInterval);
+
+  spawnCroquetas();
+
+  gameInterval = setInterval(() => {
+    time--;
+    timeText.textContent = time;
+
+    if (time <= 0) {
+      clearInterval(gameInterval);
+
+      // 🟢 ACTUALIZAR RECORD
+      if (score > best) {
+        best = score;
+        localStorage.setItem("bestScore", best);
+        bestText.textContent = best;
+      }
+
+      alert("✨ Magia terminada! Croquetas: " + score);
+    }
+  }, 1000);
+}
+
+function spawnCroquetas() {
+  croquetas.forEach(c => c.remove());
+  croquetas = [];
+
+  for (let i = 0; i < 10; i++) {
+    let c = document.createElement("div");
+    c.classList.add("croqueta");
+    c.innerHTML = "🍗";
+
+    let cx = Math.random() * 450;
+    let cy = Math.random() * 450;
+
+    c.style.left = cx + "px";
+    c.style.top = cy + "px";
+
+    game.appendChild(c);
+    croquetas.push(c);
+  }
+}
+
+function spawnParticles(x, y) {
+  for (let i = 0; i < 8; i++) {
+    let p = document.createElement("div");
+    p.classList.add("particle");
+    p.style.left = x + "px";
+    p.style.top = y + "px";
+
+    game.appendChild(p);
+    setTimeout(() => p.remove(), 800);
+  }
+}
+
+function checkCollision() {
+  croquetas.forEach((c, index) => {
+    let cx = c.offsetLeft;
+    let cy = c.offsetTop;
+
+    if (
+      x < cx + 30 &&
+      x + 50 > cx &&
+      y < cy + 30 &&
+      y + 50 > cy
+    ) {
+      spawnParticles(cx, cy);
+
+      c.remove();
+      croquetas.splice(index, 1);
+
+      score++;
+      scoreText.textContent = score;
+
+      // 🟢 ACTUALIZAR RECORD EN VIVO
+      if (score > best) {
+        best = score;
+        localStorage.setItem("bestScore", best);
+        bestText.textContent = best;
+      }
+    }
+  });
+}
+</script>
+
+</body>
+</html>
