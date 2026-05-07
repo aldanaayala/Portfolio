@@ -1,0 +1,141 @@
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #121216;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+
+.nombre {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #ec7bb3, #e79ddb, #f06eda);
+}
+
+h1 {
+  margin: 0;
+  font-size: 38px;
+}
+
+header p {
+  margin-top: 8px;
+  color: #000000;
+  font-weight: 300;
+}
+
+/* SECCIONES */
+section {
+   max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas */
+  gap: 20px;
+}
+
+h2 {
+  color: #f7dce0;
+  border-left: 4px solid #f5e6e8;
+  padding-left: 10px;
+  font-weight: 500;
+}
+
+/* TARJETAS */
+.card {
+  background: #1a1a1f;
+  padding: 18px;
+  border-radius: 14px;
+  margin-top: 10px;
+  border: 1px solid #2a2a2e;
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(236, 123, 179, 0.2);
+}
+
+/* TEXTO */
+p {
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* STATUS */
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #f7dce0;
+  color: #e20a40;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.skill {
+  background: #2d2d35;
+  padding: 15px;
+  border-radius: 12px;
+  width: 100px;
+  text-align: center;
+  border: 1px solid #2a2a2e;
+  transition: 0.25s;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+}
+
+.skill img {
+  width: 40px;
+  height: 40px;
+}
+
+.skill p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #f2e9e4;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #cfcfcf;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  section {
+    padding: 15px;
+  }
+}
