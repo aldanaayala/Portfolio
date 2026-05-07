@@ -1,110 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Portfolio Aldana</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Fuente base -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Fuente elegante SOLO para el nombre -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-  <h1 class="nombre">Aldana Virginia Ayala</h1>
-  <p> Desarrollo de Software</p>
-</header>
+  <!-- REDES -->
+  <div class="socials">
+    <a href="mailto:ayalaaldana2710@gmail.com">Mail</a>
 
-<section>
-  <h2>Sobre mí</h2>
-  <div class="card">
-    <p>
-      Estudiante de desarrollo de software. Me interesa el frontend porque me gusta crear interfaces visuales y ver resultados rápidos.
-    </p>
+    <a href="https://github.com/aldanaayala" target="_blank">
+      GitHub
+    </a>
   </div>
-</section>
 
-<section>
-  <h2>Habilidades</h2>
-  <div class="card">
-    <p>Kotlin, Python, HTML, CSS, JavaScript, Node.js</p>
-    <p>Visual Studio Code, Android Studio</p>
-  </div>
-</section>
+  <!-- GATITO -->
+<!-- GATITO -->
+<a href="https://www.instagram.com/_aalldiii_" target="_blank">
+  <img src="img/gatito.jpg" class="cat">
+</a>
 
-<section>
-  <h2>Lenguajes y herramientas</h2>
+  <header>
+    <h1 class="logo">Aldana Virginia Ayala</h1>
+    <p class="career">Desarrollo de Software</p>
+  </header>
 
-  <div class="skills">
+  <section class="about">
+    <h2>Sobre mí</h2>
+    <div class="card">
+      <p>Estudiante de desarrollo de software. Me gusta el frontend porque disfruto crear interfaces visuales lindas y funcionales. Me llama la atención todo lo que tiene que ver con diseño y cómo se ve una página, y estoy aprendiendo para poder hacer cada vez cosas más completas y prolijas</p>
+    </div>
+  </section>
 
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
-      <p>HTML</p>
+  <section>
+    <h2>Habilidades</h2>
+    <div class="card">
+      <p>Kotlin, Python, HTML, CSS, JavaScript, Node.js</p>
+      <p>Visual Studio Code, Android Studio</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lenguajes y herramientas</h2>
+
+    <div class="skills">
+
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+        <p>HTML</p>
+      </div>
+
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+        <p>CSS</p>
+      </div>
+
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+        <p>JavaScript</p>
+      </div>
+
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+        <p>Python</p>
+      </div>
+
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg">
+        <p>Kotlin</p>
+      </div>
+
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
+        <p>VS Code</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Proyectos</h2>
+
+    <div class="card">
+      <p><strong>App botón de emergencia</strong></p>
+      <p>Aplicación móvil desarrollada en Kotlin con Android Studio.Permite que al apretar un boton semande un mensaje de ayuda.</p>
+      <span class="dev-tag">En desarrollo</span>
     </div>
 
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
-      <p>CSS</p>
+    <div class="card">
+      <p><strong>Gatito mágico</strong></p>
+      <p>Juego web con HTML, CSS y JavaScript donde el gatito recolecta croquetas.</p>
+
+      <a href="proyectos/gatito.html" target="_blank" class="btn-play">
+        Jugar
+      </a>
+
+      >
     </div>
+  </section>
 
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
-      <p>JavaScript</p>
+  <section class="contact">
+    <h2>Contacto</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:ayalaaldana2710@gmail.com">ayalaaldana2710@gmail.com</a></p>
+      <p><a href="https://github.com/aldanaayala" target="_blank">GitHub</a></p>
     </div>
+  </section>
 
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
-      <p>Python</p>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg">
-      <p>Kotlin</p>
-    </div>
-
-    <div class="skill">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
-      <p>VS Code</p>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2>Proyecto</h2>
-
-  <div class="card">
-    <p><strong>App botón de emergencia</strong></p>
-
-    <p>
-      Aplicación móvil desarrollada en Kotlin con Android Studio.  
-      Permite enviar un mensaje de emergencia con un solo botón en situaciones críticas.
-    </p>
-
-    <p>
-      El objetivo es mejorar la rapidez de respuesta y la accesibilidad en emergencias.
-    </p>
-
-    <span class="status">En desarrollo</span>
-  </div>
-</section>
-
-<section>
-  <h2>Contacto</h2>
-  <div class="card">
-    <p>Email: ayalaaldana2710@gmail.com</p>
-  </div>
-</section>
-
-<footer>
-  <p>Portfolio 2026</p>
-</footer>
+  <footer>
+    <p>Portfolio 2026</p>
+  </footer>
 
 </body>
 </html>
