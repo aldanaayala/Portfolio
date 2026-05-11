@@ -217,6 +217,23 @@ h2 {
   transition: 0.3s ease;
 }
 
+.project-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.card-text{
+  flex: 1;
+}
+
+.project-img{
+  width: 180px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
 .cat:hover {
   transform: scale(1.05) rotate(2deg);
 }
@@ -225,4 +242,12 @@ footer {
   text-align: center;
   margin-top: 50px;
   opacity: 0.7;
+}
+.section .card .email {
+  font-weight: 600;
+  color: var(--pink);
+}
+.section .card .github {
+  font-weight: 600;
+  color: var(--pink);
 }
