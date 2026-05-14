@@ -15,40 +15,67 @@
 
   <!-- REDES -->
   <div class="socials">
-    <a href="mailto:ayalaaldana2710@gmail.com">Mail</a>
-
     <a href="https://github.com/aldanaayala" target="_blank">
       GitHub
     </a>
   </div>
 
   <!-- GATITO -->
-<!-- GATITO -->
-<a href="https://www.instagram.com/_aalldiii_" target="_blank">
-  <img src="img/gatito.jpg" class="cat">
-</a>
+  <a href="https://www.instagram.com/_aalldiii_" target="_blank">
+    <img src="img/gatito.jpg" class="cat">
+  </a>
 
-  <header>
+  <!-- HEADER -->
+  <header id="inicio">
+
     <h1 class="logo">Aldana Virginia Ayala</h1>
+
     <p class="career">Desarrollo de Software</p>
+
+    <p class="direccion">Santa Fe, Argentina</p>
+
+    
   </header>
 
-  <section class="about">
+  <!-- SOBRE MI -->
+  <section class="about" id="sobre-mi">
+
     <h2>Sobre mí</h2>
+
     <div class="card">
-      <p>Soy estudiante en Desarrollo de software, con un fuerte interes en el fronted y la creacion de interfaces modernas, atractivas y funcionales. Disfruto combinar diseño y programacion para desarrollar experiencias visuales cuidadas, intuitivas y enfocadas en el usuario. Actualmente continuo aprendiendo y perfeccionando mis habilidades para contruir proyectos cada vez completos, prolijos y profesionales.</p>
+      <p>
+        Hola, mi nombre es Aldana, tengo 20 años y soy estudiante en
+        Desarrollo de software, con un fuerte interés en el frontend y
+        la creación de interfaces modernas, atractivas y funcionales.
+        Disfruto combinar diseño y programación para desarrollar
+        experiencias visuales cuidadas, intuitivas y enfocadas en el usuario.
+        Actualmente continúo aprendiendo y perfeccionando mis habilidades
+        para construir proyectos cada vez más completos, prolijos y profesionales.
+      </p>
     </div>
+
   </section>
 
+  <!-- HABILIDADES -->
   <section>
-    <h2>Habilidades</h2>
+
+    <h2>Habilidades blandas</h2>
+
     <div class="card">
-      <p> Python, HTML, CSS, JavaScript</p>
-      <p>Visual Studio Code</p>
+      <p>
+        Capacidad de expresar ideas con claridad y escuchar activamente.
+        Identificar conflictos y proponer soluciones creativas.
+        Priorizar tareas y cumplir con plazos de entrega.
+        Colaborar efectivamente para alcanzar objetivos comunes.
+        Flexibilidad para ajustarse a cambios en tareas o entornos.
+      </p>
     </div>
+
   </section>
 
+  <!-- LENGUAJES -->
   <section>
+
     <h2>Lenguajes y herramientas</h2>
 
     <div class="skills">
@@ -73,59 +100,107 @@
         <p>Python</p>
       </div>
 
-      
       <div class="skill">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg">
         <p>VS Code</p>
       </div>
-      
-       
+
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+        <p>Git</p>
+      </div>
+
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+        <p>GitHub</p>
+      </div>
+
     </div>
 
   </section>
 
-  <section>
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+
     <h2>Proyectos</h2>
 
     <div class="card">
+
       <p><strong>App botón de emergencia</strong></p>
-      <p>Aplicación móvil desarrollada en Kotlin con Android Studio. Permite que al apretar un boton se mande un mensaje de ayuda.</p>
+
+      <p>
+        Aplicación móvil desarrollada en Kotlin con Android Studio.
+        Permite que al apretar un botón se mande un mensaje de ayuda.
+      </p>
+
       <span class="dev-tag">En desarrollo</span>
+
     </div>
 
     <div class="card project-card">
 
-  <div class="card-text">
-    <p><strong>Gatito mágico</strong></p>
+      <div class="card-text">
 
-    <p>
-      Juego web con HTML, CSS y JavaScript donde el gatito
-      recolecta croquetas. Cuenta con cronómetro,
-      récord y cantidad de croquetas recolectadas.
-      ¿Te animás a alimentar al gatito?
-    </p>
+        <p><strong>Gatito mágico</strong></p>
 
-    <a href="./proyectos/gatito.html" target="_blank" class="btn-play">
-      Jugar
-    </a>
-  </div>
+        <p>
+          Juego web con HTML, CSS y JavaScript donde el gatito
+          recolecta croquetas. Cuenta con cronómetro,
+          récord y cantidad de croquetas recolectadas.
+          ¿Te animás a alimentar al gatito?
+        </p>
 
-  <img src="img/gat.jpg" class="project-img">
+        <a href="./proyectos/gatito.html" target="_blank" class="btn-play">
+          Jugar
+        </a>
 
-</div>
-  </section>
+      </div>
 
-  <section class="contact">
-    <h2>Contacto</h2>
-    <div class="card">
-      <p>Email:<p class="email"> ayalaaldana2710@gmail.com</p> 
-      <p>Github:<a href="https://github.com/aldanaayala" target="_blank">GitHub</a></p>
+      <img src="img/gat.jpg" class="project-img">
+
     </div>
+
   </section>
 
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+
+    <h2>Contacto</h2>
+
+    <div class="card">
+      <p>
+        <a href="https://github.com/aldanaayala" target="_blank" class="github">
+          GitHub
+        </a>
+      </p>
+    </div>
+
+  </section>
+
+  <!-- FORMULARIO -->
+  <section>
+
+    <form action="https://formspree.io/f/mayvlgvd" method="POST" class="contact-form">
+
+      <h2>Enviame un mensaje</h2>
+
+      <input type="text" name="name" placeholder="Tu nombre" required>
+
+      <input type="email" name="_replyto" placeholder="Tu email" required>
+
+      <textarea name="message" placeholder="Tu mensaje" required></textarea>
+
+      <button type="submit">Enviar</button>
+
+    </form>
+
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>Portfolio 2026</p>
   </footer>
 
 </body>
+
 </html>
